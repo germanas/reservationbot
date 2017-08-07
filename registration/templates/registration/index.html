@@ -1,0 +1,11 @@
+{% load staticfiles %}
+{% for item in list_of_registrations %}
+    <p>{{ item.id }} {{ item.registration_date }} {{ item.name }} {{ item.surname }} User who registered: {{ item.user }}</p>
+{% endfor %}
+<a href="{% url 'save' %}" ><span class="glyphicon glyphicon-plus">neeg </span></a>
+{% if user.is_authenticated %}
+     <li>User: {{ user.get_username }}</li>
+     <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+   {% else %}
+     <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+   {% endif %}
