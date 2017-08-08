@@ -8,18 +8,18 @@ from django.utils.decorators import method_decorator
 from django.views import generic
 from django.http.response import HttpResponse
 # Create your views here.
-
+from vars import *
 
 
 def post_facebook_message(fbid, recevied_message):
-    post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=EAAE7XGty0qABAJd4xXVpeR6ZACZBP7bLew5x0HuM1tubNERaT336XDw3fluEejeJuGZAAzPrJoKSkRPthZAGVEwI3JszrE8DsfuyhaTth5k4bOwCFZBa7Yi6nPXGOSf0sVAawZAmeE8fkvUcqoE4VXQOxCKRE3qlhMLJNIFnUtvwZDZD'
+    post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s' % (page_access_token)
     response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":recevied_message}})
     status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
     pprint(status.json())
 
 class reservations_botview(generic.View):
     def get(self, request, *args, **kwargs):
-        if self.request.POST.get('hub.verify_token') == '2318934571':
+        if self.request.POST.get('hub.verify_token') == verify_token:
             return HttpResponse(self.request.POST.get('hub.challenge'))
         else:
             return HttpResponse('Error, invalid token')
