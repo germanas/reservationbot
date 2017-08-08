@@ -25,7 +25,7 @@ SECRET_KEY = 'y_n$34ow81ww685w08-3g2ba-2ke!fy5w+c*6oco9ix1d1_9pv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com', 'localhost','9803ca5f.ngrok.io']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com', 'localhost','germanas.pythonanywhere.com']
 
 
 # Application definition
@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'oneclick.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'registration_db',
-        'USER': 'root',
-        'PASSWORD': 'langas',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'NAME': 'germanas$reservationsbot',
+        'USER': 'germanas',
+        'PASSWORD': 'langas123',
+        'HOST': 'germanas.mysql.pythonanywhere-services.com',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }
