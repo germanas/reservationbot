@@ -1,0 +1,5 @@
+.idea/
+oneclick/__pycache__/
+reservations/__pycache__/
+reservations/migrations/__pycache__/
+oneclick/settings.py
