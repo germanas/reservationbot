@@ -3,3 +3,5 @@ oneclick/__pycache__/
 registration/__pycache__/
 registration/migrations/__pycache__/
 oneclick/settings.py
+reservations_bot/__pycache__/
+reservations_bot/migrations/__pycache__/
